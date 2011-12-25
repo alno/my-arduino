@@ -1,5 +1,11 @@
 #include "URM37.h"
-#include "Arduino.h"
+
+#if (ARDUINO >= 100)
+ #include "Arduino.h"
+#else
+ #include <avr/io.h>
+ #include "WProgram.h"
+#endif
 
 URM37::URM37(Stream * stream): stream(stream) {
 }
